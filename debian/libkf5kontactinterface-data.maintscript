@@ -1,0 +1,2 @@
+rm_conffile /etc/xdg/kontactinterface.categories 20.04.1-2~
+rm_conffile /etc/xdg/kontactinterface.renamecategories 20.04.1-2~

@@ -1,0 +1,58 @@
+Source: kontactinterface
+Section: libs
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Norbert Preining <norbert@preining.info>,
+           Sandro Knauß <hefee@debian.org>,
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.83.0~),
+               gettext,
+               libkf5coreaddons-dev (>= 5.83.0~),
+               libkf5i18n-dev (>= 5.83.0~),
+               libkf5parts-dev (>= 5.83.0~),
+               libkf5windowsystem-dev (>= 5.83.0~),
+               libkf5xmlgui-dev (>= 5.83.0~),
+               libx11-dev,
+               pkg-kde-tools (>> 0.15.15),
+Standards-Version: 4.6.0
+Homepage: https://invent.kde.org/pim/kontactinterface
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/kde/kontactinterface
+Vcs-Git: https://salsa.debian.org/qt-kde-team/kde/kontactinterface.git
+Rules-Requires-Root: no
+
+Package: libkf5kontactinterface-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Kontact interface library - data files
+ This library provides the glue necessary for application "Parts" to be
+ embedded as a Kontact component (or plugin).
+ .
+ This package contains shared data files.
+
+Package: libkf5kontactinterface-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf5i18n-dev (>= 5.83.0~),
+         libkf5kontactinterface5 (= ${binary:Version}),
+         libkf5parts-dev (>= 5.83.0~),
+         libkf5windowsystem-dev (>= 5.83.0~),
+         ${misc:Depends},
+Description: Kontact interface library - development files
+ This library provides the glue necessary for application "Parts" to be
+ embedded as a Kontact component (or plugin).
+ .
+ This package contains the development files.
+
+Package: libkf5kontactinterface5
+Architecture: any
+Multi-Arch: same
+Depends: libkf5kontactinterface-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends},
+Description: Kontact interface library
+ This library provides the glue necessary for application "Parts" to be
+ embedded as a Kontact component (or plugin).
+Provides: ${ABI:VirtualPackage}
